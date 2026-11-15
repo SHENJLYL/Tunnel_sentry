@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="tunnel_sentinel">
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0 0 0.00586978866055" rpy="0 0 0" />
+      <mass value="38.1035776062" />
+      <inertia ixx="1.02391846654" iyy="1.02391846655" izz="1.95088962633" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="base_link_visual">
+      <geometry>
+        <mesh filename="meshes/chassis.stl" />
+      </geometry>
+      <material name="chassis_material">
+        <color rgba="0.60 0.65 0.70 1" />
+      </material>
+    </visual>
+    <collision name="base_link_collision">
+      <geometry>
+        <mesh filename="meshes/chassis.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="gimbal_yaw_link">
+    <inertial>
+      <origin xyz="-0.00527983192955 0.037796342411 0.0456967479311" rpy="0 0 0" />
+      <mass value="11.4819142525" />
+      <inertia ixx="0.102749561255" iyy="0.169291860926" izz="0.256619770567" ixy="-0.010778472544" ixz="0.00117021289422" iyz="0.00142237073929" />
+    </inertial>
+    <visual name="gimbal_yaw_link_visual">
+      <geometry>
+        <mesh filename="meshes/gimbal_yaw.stl" />
+      </geometry>
+      <material name="gimbal_yaw_material">
+        <color rgba="0.25 0.48 0.68 1" />
+      </material>
+    </visual>
+    <collision name="gimbal_yaw_link_collision">
+      <geometry>
+        <mesh filename="meshes/gimbal_yaw.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="gimbal_pitch_link">
+    <inertial>
+      <origin xyz="0.133070260132 -0.0655277685404 0" rpy="0 0 0" />
+      <mass value="1.82471587885" />
+      <inertia ixx="0.00405849922592" iyy="0.0131994867003" izz="0.0158053385647" ixy="0.00308032882862" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="gimbal_pitch_link_visual">
+      <geometry>
+        <mesh filename="meshes/gimbal_pitch.stl" />
+      </geometry>
+      <material name="gimbal_pitch_material">
+        <color rgba="0.25 0.48 0.68 1" />
+      </material>
+    </visual>
+    <collision name="gimbal_pitch_link_collision">
+      <geometry>
+        <mesh filename="meshes/gimbal_pitch.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_right_steering_link">
+    <inertial>
+      <origin xyz="0.00866419643516 0 -0.0156793481547" rpy="0 0 0" />
+      <mass value="0.217830303563" />
+      <inertia ixx="0.000234818798716" iyy="0.000264436848785" izz="0.000367075647958" ixy="0" ixz="4.9125047133e-05" iyz="0" />
+    </inertial>
+    <visual name="front_right_steering_link_visual">
+      <geometry>
+        <mesh filename="meshes/steering.stl" />
+      </geometry>
+      <material name="steering_material">
+        <color rgba="0.25 0.48 0.68 1" />
+      </material>
+    </visual>
+    <collision name="front_right_steering_link_collision">
+      <geometry>
+        <mesh filename="meshes/steering.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_right_wheel_link">
+    <inertial>
+      <origin xyz="-0.03 -4.44383418952e-12 0" rpy="0 0 0" />
+      <mass value="0.340470103833" />
+      <inertia ixx="0.000307487042668" iyy="0.000255884532628" izz="0.00025588457234" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="front_right_wheel_link_visual">
+      <geometry>
+        <mesh filename="meshes/wheel.stl" />
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0.18 0.20 0.23 1" />
+      </material>
+    </visual>
+    <collision name="front_right_wheel_link_collision">
+      <geometry>
+        <mesh filename="meshes/wheel.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_right_steering_link">
+    <inertial>
+      <origin xyz="0.00866419643516 0 -0.0156793481547" rpy="0 0 0" />
+      <mass value="0.217830303563" />
+      <inertia ixx="0.000234818798716" iyy="0.000264436848785" izz="0.000367075647958" ixy="0" ixz="4.9125047133e-05" iyz="0" />
+    </inertial>
+    <visual name="rear_right_steering_link_visual">
+      <geometry>
+        <mesh filename="meshes/steering.stl" />
+      </geometry>
+      <material name="steering_material">
+        <color rgba="0.25 0.48 0.68 1" />
+      </material>
+    </visual>
+    <collision name="rear_right_steering_link_collision">
+      <geometry>
+        <mesh filename="meshes/steering.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_right_wheel_link">
+    <inertial>
+      <origin xyz="-0.03 -4.44383418952e-12 0" rpy="0 0 0" />
+      <mass value="0.340470103833" />
+      <inertia ixx="0.000307487042668" iyy="0.000255884532628" izz="0.00025588457234" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="rear_right_wheel_link_visual">
+      <geometry>
+        <mesh filename="meshes/wheel.stl" />
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0.18 0.20 0.23 1" />
+      </material>
+    </visual>
+    <collision name="rear_right_wheel_link_collision">
+      <geometry>
+        <mesh filename="meshes/wheel.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_left_steering_link">
+    <inertial>
+      <origin xyz="0.00866419643516 0 -0.0156793481547" rpy="0 0 0" />
+      <mass value="0.217830303563" />
+      <inertia ixx="0.000234818798716" iyy="0.000264436848785" izz="0.000367075647958" ixy="0" ixz="4.9125047133e-05" iyz="0" />
+    </inertial>
+    <visual name="rear_left_steering_link_visual">
+      <geometry>
+        <mesh filename="meshes/steering.stl" />
+      </geometry>
+      <material name="steering_material">
+        <color rgba="0.25 0.48 0.68 1" />
+      </material>
+    </visual>
+    <collision name="rear_left_steering_link_collision">
+      <geometry>
+        <mesh filename="meshes/steering.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="rear_left_wheel_link">
+    <inertial>
+      <origin xyz="-0.03 -4.44383418952e-12 0" rpy="0 0 0" />
+      <mass value="0.340470103833" />
+      <inertia ixx="0.000307487042668" iyy="0.000255884532628" izz="0.00025588457234" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="rear_left_wheel_link_visual">
+      <geometry>
+        <mesh filename="meshes/wheel.stl" />
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0.18 0.20 0.23 1" />
+      </material>
+    </visual>
+    <collision name="rear_left_wheel_link_collision">
+      <geometry>
+        <mesh filename="meshes/wheel.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_left_steering_link">
+    <inertial>
+      <origin xyz="0.00866419643516 0 -0.0156793481547" rpy="0 0 0" />
+      <mass value="0.217830303563" />
+      <inertia ixx="0.000234818798716" iyy="0.000264436848785" izz="0.000367075647958" ixy="0" ixz="4.9125047133e-05" iyz="0" />
+    </inertial>
+    <visual name="front_left_steering_link_visual">
+      <geometry>
+        <mesh filename="meshes/steering.stl" />
+      </geometry>
+      <material name="steering_material">
+        <color rgba="0.25 0.48 0.68 1" />
+      </material>
+    </visual>
+    <collision name="front_left_steering_link_collision">
+      <geometry>
+        <mesh filename="meshes/steering.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="front_left_wheel_link">
+    <inertial>
+      <origin xyz="-0.03 -4.44383418952e-12 0" rpy="0 0 0" />
+      <mass value="0.340470103833" />
+      <inertia ixx="0.000307487042668" iyy="0.000255884532628" izz="0.00025588457234" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="front_left_wheel_link_visual">
+      <geometry>
+        <mesh filename="meshes/wheel.stl" />
+      </geometry>
+      <material name="wheel_material">
+        <color rgba="0.18 0.20 0.23 1" />
+      </material>
+    </visual>
+    <collision name="front_left_wheel_link_collision">
+      <geometry>
+        <mesh filename="meshes/wheel.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="gimbal_yaw_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="gimbal_yaw_link" />
+    <origin xyz="0 0 0.06525" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <joint name="gimbal_pitch_joint" type="continuous">
+    <parent link="gimbal_yaw_link" />
+    <child link="gimbal_pitch_link" />
+    <origin xyz="0 -0.11 0.045" rpy="0 0 0" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <joint name="front_right_steering_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="front_right_steering_link" />
+    <origin xyz="0.2273 -0.2273 0.015" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <joint name="front_right_wheel_joint" type="continuous">
+    <parent link="front_right_steering_link" />
+    <child link="front_right_wheel_link" />
+    <origin xyz="0.03 0 -0.063" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <joint name="rear_right_steering_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="rear_right_steering_link" />
+    <origin xyz="-0.2273 -0.2273 0.015" rpy="0 0 -1.57079632679" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <joint name="rear_right_wheel_joint" type="continuous">
+    <parent link="rear_right_steering_link" />
+    <child link="rear_right_wheel_link" />
+    <origin xyz="0.03 0 -0.063" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <joint name="rear_left_steering_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="rear_left_steering_link" />
+    <origin xyz="-0.2273 0.2273 0.015" rpy="0 0 3.14159265359" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <joint name="rear_left_wheel_joint" type="continuous">
+    <parent link="rear_left_steering_link" />
+    <child link="rear_left_wheel_link" />
+    <origin xyz="0.03 0 -0.063" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+  </joint>
+  <joint name="front_left_steering_joint" type="continuous">
+    <parent link="base_link" />
+    <child link="front_left_steering_link" />
+    <origin xyz="0.2273 0.2273 0.015" rpy="0 0 1.57079632679" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <joint name="front_left_wheel_joint" type="continuous">
+    <parent link="front_left_steering_link" />
+    <child link="front_left_wheel_link" />
+    <origin xyz="0.03 0 -0.063" rpy="0 0 0" />
+    <axis xyz="1 0 0" />
+  </joint>
+</robot>

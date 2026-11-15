@@ -1,0 +1,41 @@
+# Mechanical extension and simulated Odin1 parameters, in SI units.
+wheel_radius: 0.065
+wheel_width: 0.045
+half_spacing: 0.2273
+root_height: 0.113
+folded_height: 0.23925
+max_height: 0.4
+pitch_min: 0.0
+pitch_max: 0.52
+pitch_pivot_height: 0.22325
+pitch_mass: 1.82471587885
+pitch_com_x: 0.133070260132
+pitch_com_z: 0.0
+lift_stroke: 0.16075
+lift_speed: 0.06
+lift_mass: 14.18663013135
+odin:
+  body_xyz:
+  - 0.18
+  - 0.13
+  - 0.025
+  body_rpy:
+  - 0.0
+  - 0.0
+  - 0.0
+  body_size:
+  - 0.043
+  - 0.1
+  - 0.062
+  mass: 0.28
+  mount_mass: 0.15
+  sensor_xyz:
+  - 0.024
+  - 0.0
+  - 0.0
+  horizontal_samples: 240
+  vertical_samples: 180
+  update_rate: 10.0
+  range_min: 0.2
+  range_max: 30.0
+  noise_stddev: 0.01

@@ -1,0 +1,11 @@
+# Manual service entries follow the top-level layout of 27UL_Sentry_ws.
+workspaces:
+  tunnel_sentinel_ws:
+    setup_script: scripts/env.sh
+    services:
+      - unit_name: tunnel-sentinel-sim
+        description: Gazebo, robot state and C++ control
+        launch_command: ros2 launch tunnel_sentinel_bringup simulation.launch.py
+      - unit_name: tunnel-sentinel-rviz
+        description: Robot and coordinate frames
+        launch_command: ros2 run rviz2 rviz2 -d src/tunnel_sentinel_description/rviz/sentry.rviz

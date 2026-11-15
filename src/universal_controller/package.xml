@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>universal_controller</name><version>0.1.0</version>
+  <description>C++ effort control for the tunnel sentry simulation.</description>
+  <maintainer email="maintainer@example.com">Sentry team</maintainer><license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>chassis_controllers</depend><depend>controller_interface</depend><depend>pluginlib</depend>
+  <depend>rclcpp</depend><depend>realtime_tools</depend><depend>geometry_msgs</depend><depend>std_msgs</depend><depend>sensor_msgs</depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>

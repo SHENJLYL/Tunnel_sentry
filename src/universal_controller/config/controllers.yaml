@@ -1,0 +1,33 @@
+/**/controller_manager:
+  ros__parameters:
+    update_rate: 500
+    use_sim_time: true
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+    sentry_controller:
+      type: universal_controller/SentryController
+/**/joint_state_broadcaster:
+  ros__parameters:
+    use_sim_time: true
+/**/sentry_controller:
+  ros__parameters:
+    use_sim_time: true
+    command_timeout: 0.5
+    max_linear_speed: 1.0
+    max_yaw_rate: 1.5
+    wheel_kp: 0.12
+    wheel_ki: 0.5
+    wheel_torque: 5.0
+    steering_kp: 20.0
+    steering_kd: 0.35
+    steering_torque: 8.0
+    yaw_kp: 35.0
+    yaw_kd: 5.0
+    yaw_torque: 12.0
+    pitch_kp: 25.0
+    pitch_kd: 2.5
+    pitch_torque: 8.0
+    pitch_speed: 0.25
+    lift_kp: 6000.0
+    lift_kd: 550.0
+    lift_force: 300.0

@@ -1,0 +1,31 @@
+# ROS build products and local dependencies
+/build/
+/install/
+/log/
+/.deps/
+/.runtime/
+
+# Generated results, earlier model copies and migration copies
+/reports/
+/archives/
+/.migration_backup/
+
+# Python and virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Editor and local settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+.env
+.env.*
+!.env.example
+!.env.template

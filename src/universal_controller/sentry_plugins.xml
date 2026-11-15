@@ -1,0 +1,5 @@
+<library path="sentry_controller">
+  <class name="universal_controller/SentryController" type="sentry::SentryController" base_class_type="controller_interface::ControllerInterface">
+    <description>Effort loops for four steering modules, lift and gimbal.</description>
+  </class>
+</library>

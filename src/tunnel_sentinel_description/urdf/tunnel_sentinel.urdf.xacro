@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="tunnel_sentinel">
+  <xacro:arg name="model_file" default="$(find tunnel_sentinel_description)/config/model.yaml" />
+  <xacro:arg name="source_file" default="$(find tunnel_sentinel_description)/urdf/tunnel_sentinel_lift.urdf" />
+  <xacro:arg name="controllers_file" default="" />
+  <xacro:arg name="namespace" default="red_standard_robot1" />
+  <xacro:include filename="$(arg source_file)" />
+  <xacro:property name="odin" value="${xacro.load_yaml('$(arg model_file)')['odin']}" />
+  <ros2_control name="GazeboSimSystem" type="system">
+    <hardware>
+      <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+    </hardware>
+    <joint name="lift_joint">
+      <command_interface name="effort">
+        <param name="min">-300</param>
+        <param name="max">300</param>
+      </command_interface>
+      <state_interface name="position"><param name="initial_value">0</param></state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="lift_stage_joint">
+      <command_interface name="effort"><param name="min">-40</param><param name="max">40</param></command_interface>
+      <state_interface name="position" />
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="gimbal_yaw_joint">
+      <command_interface name="effort">
+        <param name="min">-12</param>
+        <param name="max">12</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="gimbal_pitch_joint">
+      <command_interface name="effort">
+        <param name="min">-8</param>
+        <param name="max">8</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="front_right_steering_joint">
+      <command_interface name="effort">
+        <param name="min">-8</param>
+        <param name="max">8</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="front_right_wheel_joint">
+      <command_interface name="effort">
+        <param name="min">-5</param>
+        <param name="max">5</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="rear_right_steering_joint">
+      <command_interface name="effort">
+        <param name="min">-8</param>
+        <param name="max">8</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="rear_right_wheel_joint">
+      <command_interface name="effort">
+        <param name="min">-5</param>
+        <param name="max">5</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="rear_left_steering_joint">
+      <command_interface name="effort">
+        <param name="min">-8</param>
+        <param name="max">8</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="rear_left_wheel_joint">
+      <command_interface name="effort">
+        <param name="min">-5</param>
+        <param name="max">5</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="front_left_steering_joint">
+      <command_interface name="effort">
+        <param name="min">-8</param>
+        <param name="max">8</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+    <joint name="front_left_wheel_joint">
+      <command_interface name="effort">
+        <param name="min">-5</param>
+        <param name="max">5</param>
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity" />
+      <state_interface name="effort" />
+    </joint>
+  </ros2_control>
+  <gazebo reference="base_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="lift_base_link"><selfCollide>true</selfCollide></gazebo>
+  <gazebo reference="lift_stage_link"><selfCollide>true</selfCollide></gazebo>
+  <gazebo reference="lift_carriage_link"><selfCollide>true</selfCollide></gazebo>
+  <gazebo reference="gimbal_yaw_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="gimbal_pitch_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="front_right_steering_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="front_right_wheel_link">
+    <selfCollide>true</selfCollide>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+  <gazebo reference="rear_right_steering_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="rear_right_wheel_link">
+    <selfCollide>true</selfCollide>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+  <gazebo reference="rear_left_steering_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="rear_left_wheel_link">
+    <selfCollide>true</selfCollide>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+  <gazebo reference="front_left_steering_link">
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="front_left_wheel_link">
+    <selfCollide>true</selfCollide>
+    <mu1>1.0</mu1>
+    <mu2>1.0</mu2>
+  </gazebo>
+  <gazebo reference="base_link">
+    <sensor name="imu" type="imu">
+      <always_on>true</always_on>
+      <update_rate>250</update_rate>
+      <topic>/$(arg namespace)/imu</topic>
+      <imu />
+    </sensor>
+  </gazebo>
+  <gazebo reference="gimbal_pitch_link">
+    <sensor name="gimbal_imu" type="imu">
+      <always_on>true</always_on>
+      <update_rate>250</update_rate>
+      <topic>/$(arg namespace)/gimbal_imu</topic>
+      <imu />
+    </sensor>
+  </gazebo>
+  <gazebo reference="odin_mount_link"><selfCollide>true</selfCollide></gazebo>
+  <gazebo reference="odin_link">
+    <selfCollide>true</selfCollide>
+    <sensor name="odin1_lidar" type="gpu_lidar">
+      <pose>${odin['sensor_xyz'][0]} ${odin['sensor_xyz'][1]} ${odin['sensor_xyz'][2]} 0 0 0</pose>
+      <gz_frame_id>odin_lidar_frame</gz_frame_id>
+      <always_on>true</always_on>
+      <update_rate>${odin['update_rate']}</update_rate>
+      <topic>/$(arg namespace)/odin1/scan</topic>
+      <visualize>false</visualize>
+      <ray>
+        <scan>
+          <horizontal><samples>${odin['horizontal_samples']}</samples><resolution>1</resolution><min_angle>-1.0471975511965976</min_angle><max_angle>1.0471975511965976</max_angle></horizontal>
+          <vertical><samples>${odin['vertical_samples']}</samples><resolution>1</resolution><min_angle>-0.7853981633974483</min_angle><max_angle>0.7853981633974483</max_angle></vertical>
+        </scan>
+        <range><min>${odin['range_min']}</min><max>${odin['range_max']}</max><resolution>0.01</resolution></range>
+        <noise><type>gaussian</type><mean>0</mean><stddev>${odin['noise_stddev']}</stddev></noise>
+      </ray>
+    </sensor>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <hold_joints>false</hold_joints>
+      <parameters>$(arg controllers_file)</parameters>
+      <ros>
+        <namespace>/$(arg namespace)</namespace>
+      </ros>
+    </plugin>
+    <plugin filename="gz-sim-odometry-publisher-system" name="gz::sim::systems::OdometryPublisher">
+      <dimensions>3</dimensions>
+      <odom_frame>odom</odom_frame>
+      <robot_base_frame>base_link</robot_base_frame>
+      <odom_publish_frequency>50</odom_publish_frequency>
+      <odom_topic>/$(arg namespace)/ground_truth/odom</odom_topic>
+      <tf_topic>/$(arg namespace)/ground_truth/tf</tf_topic>
+    </plugin>
+  </gazebo>
+</robot>

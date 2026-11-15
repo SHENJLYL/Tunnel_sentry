@@ -1,0 +1,481 @@
+# Test geometry in metres. Odin1 windows and mounting bracket are approximations.
+chassis.stl:
+- type: box
+  size:
+  - 0.129
+  - 0.35
+  - 0.06
+  xyz:
+  - 0.1105
+  - 0
+  - 0
+  color: &id001
+  - 0.12
+  - 0.16
+  - 0.22
+  - 1
+- type: box
+  size:
+  - 0.129
+  - 0.35
+  - 0.06
+  xyz:
+  - -0.1105
+  - 0
+  - 0
+  color: *id001
+- type: box
+  size:
+  - 0.092
+  - 0.129
+  - 0.06
+  xyz:
+  - 0
+  - 0.1105
+  - 0
+  color: *id001
+- type: box
+  size:
+  - 0.092
+  - 0.129
+  - 0.06
+  xyz:
+  - 0
+  - -0.1105
+  - 0
+  color: *id001
+- type: box
+  size:
+  - 0.23
+  - 0.018
+  - 0.05
+  xyz:
+  - 0
+  - 0.19
+  - 0
+  color:
+  - 0.72
+  - 0.08
+  - 0.06
+  - 1
+- type: box
+  size:
+  - 0.23
+  - 0.018
+  - 0.05
+  xyz:
+  - 0
+  - -0.19
+  - 0
+  color:
+  - 0.72
+  - 0.08
+  - 0.06
+  - 1
+gimbal_yaw.stl:
+- type: cylinder
+  radius: 0.06
+  length: 0.02
+  xyz:
+  - 0
+  - 0
+  - 0
+  color:
+  - 0.2
+  - 0.43
+  - 0.61
+  - 1
+- type: cylinder
+  radius: 0.03
+  length: 0.025
+  xyz:
+  - 0
+  - 0
+  - -0.0225
+  color:
+  - 0.2
+  - 0.43
+  - 0.61
+  - 1
+- type: box
+  size:
+  - 0.06
+  - 0.21
+  - 0.015
+  xyz:
+  - 0
+  - -0.105
+  - 0
+  color:
+  - 0.2
+  - 0.43
+  - 0.61
+  - 1
+- type: box
+  size:
+  - 0.025
+  - 0.02
+  - 0.05
+  xyz:
+  - 0
+  - -0.2
+  - 0.025
+  color:
+  - 0.2
+  - 0.43
+  - 0.61
+  - 1
+- type: box
+  size:
+  - 0.025
+  - 0.02
+  - 0.05
+  xyz:
+  - 0
+  - -0.02
+  - 0.025
+  color:
+  - 0.2
+  - 0.43
+  - 0.61
+  - 1
+gimbal_pitch.stl:
+- type: box
+  size:
+  - 0.24
+  - 0.14
+  - 0.032
+  xyz:
+  - 0.1
+  - 0
+  - 0
+  color:
+  - 0.25
+  - 0.47
+  - 0.64
+  - 1
+- type: cylinder
+  radius: 0.016
+  length: 0.16
+  xyz:
+  - 0.28
+  - 0
+  - 0
+  rpy:
+  - 0
+  - 1.5707963267948966
+  - 0
+  color:
+  - 0.1
+  - 0.12
+  - 0.15
+  - 1
+- type: box
+  size:
+  - 0.05
+  - 0.04
+  - 0.025
+  xyz:
+  - 0.15
+  - -0.1
+  - 0
+  color:
+  - 0.04
+  - 0.06
+  - 0.08
+  - 1
+- type: box
+  size:
+  - 0.025
+  - 0.015
+  - 0.01
+  xyz:
+  - 0.15
+  - -0.0775
+  - 0
+  color:
+  - 0.25
+  - 0.47
+  - 0.64
+  - 1
+steering.stl:
+- type: cylinder
+  radius: 0.026
+  length: 0.04
+  xyz:
+  - 0
+  - 0
+  - -0.005
+  color:
+  - 0.65
+  - 0.67
+  - 0.7
+  - 1
+- type: box
+  size:
+  - 0.016
+  - 0.025
+  - 0.06
+  xyz:
+  - 0.03
+  - 0
+  - -0.035
+  color:
+  - 0.38
+  - 0.42
+  - 0.47
+  - 1
+wheel.stl:
+- type: cylinder
+  radius: 0.065
+  length: 0.045
+  xyz:
+  - -0.03
+  - 0
+  - 0
+  rpy:
+  - 0
+  - 1.5707963267948966
+  - 0
+  color:
+  - 0.055
+  - 0.065
+  - 0.075
+  - 1
+lift_base.stl:
+- type: box
+  size:
+  - 0.004
+  - 0.08
+  - 0.1
+  xyz:
+  - -0.038
+  - 0
+  - -0.027
+  color: &id002
+  - 0.32
+  - 0.36
+  - 0.4
+  - 1
+- type: box
+  size:
+  - 0.07200000000000001
+  - 0.004
+  - 0.1
+  xyz:
+  - 0
+  - -0.038
+  - -0.027
+  color: *id002
+- type: box
+  size:
+  - 0.004
+  - 0.08
+  - 0.1
+  xyz:
+  - 0.038
+  - 0
+  - -0.027
+  color: *id002
+- type: box
+  size:
+  - 0.07200000000000001
+  - 0.004
+  - 0.1
+  xyz:
+  - 0
+  - 0.038
+  - -0.027
+  color: *id002
+lift_stage.stl:
+- type: box
+  size:
+  - 0.004
+  - 0.064
+  - 0.1
+  xyz:
+  - -0.03
+  - 0
+  - -0.027
+  color: &id003
+  - 0.68
+  - 0.7
+  - 0.73
+  - 1
+- type: box
+  size:
+  - 0.056
+  - 0.004
+  - 0.1
+  xyz:
+  - 0
+  - -0.03
+  - -0.027
+  color: *id003
+- type: box
+  size:
+  - 0.004
+  - 0.064
+  - 0.1
+  xyz:
+  - 0.03
+  - 0
+  - -0.027
+  color: *id003
+- type: box
+  size:
+  - 0.056
+  - 0.004
+  - 0.1
+  xyz:
+  - 0
+  - 0.03
+  - -0.027
+  color: *id003
+lift_carriage.stl:
+- type: box
+  size:
+  - 0.004
+  - 0.048
+  - 0.107
+  xyz:
+  - -0.022
+  - 0
+  - -0.0235
+  color: &id004
+  - 0.2
+  - 0.43
+  - 0.61
+  - 1
+- type: box
+  size:
+  - 0.04
+  - 0.004
+  - 0.107
+  xyz:
+  - 0
+  - -0.022
+  - -0.0235
+  color: *id004
+- type: box
+  size:
+  - 0.004
+  - 0.048
+  - 0.107
+  xyz:
+  - 0.022
+  - 0
+  - -0.0235
+  color: *id004
+- type: box
+  size:
+  - 0.04
+  - 0.004
+  - 0.107
+  xyz:
+  - 0
+  - 0.022
+  - -0.0235
+  color: *id004
+- type: box
+  size:
+  - 0.048
+  - 0.048
+  - 0.004
+  xyz:
+  - 0
+  - 0
+  - 0.028
+  color: *id004
+odin_mount.stl:
+- type: box
+  size:
+  - 0.025
+  - 0.13
+  - 0.003
+  xyz:
+  - 0
+  - 0.075
+  - -0.0075
+  color: &id005
+  - 0.68
+  - 0.7
+  - 0.73
+  - 1
+- type: box
+  size:
+  - 0.2
+  - 0.025
+  - 0.003
+  xyz:
+  - 0.09
+  - 0.13
+  - -0.0075
+  color: *id005
+- type: box
+  size:
+  - 0.06
+  - 0.12
+  - 0.003
+  xyz:
+  - 0.18
+  - 0.13
+  - -0.0075
+  color: *id005
+odin1.stl:
+- type: box
+  size:
+  - 0.043
+  - 0.1
+  - 0.062
+  xyz:
+  - 0
+  - 0
+  - 0
+  color:
+  - 0.12
+  - 0.15
+  - 0.18
+  - 1
+- type: box
+  size:
+  - 0.001
+  - 0.042
+  - 0.02
+  xyz:
+  - 0.022
+  - -0.023
+  - 0.007
+  color:
+  - 0.05
+  - 0.18
+  - 0.3
+  - 1
+- type: box
+  size:
+  - 0.001
+  - 0.025
+  - 0.02
+  xyz:
+  - 0.022
+  - 0.025
+  - 0.007
+  color:
+  - 0.05
+  - 0.18
+  - 0.3
+  - 1
+- type: box
+  size:
+  - 0.001
+  - 0.021
+  - 0.007
+  xyz:
+  - 0.022
+  - 0
+  - -0.02
+  color:
+  - 0.8
+  - 0.56
+  - 0.12
+  - 1

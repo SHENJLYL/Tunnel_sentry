@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <world name="tunnel_test">
+    <physics name="physics" type="ignored">
+      <max_step_size>.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu" />
+    <plugin filename="gz-sim-contact-system" name="gz::sim::systems::Contact" />
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <gravity>0 0 -9.81</gravity>
+    <light name="sun" type="directional">
+      <pose>0 0 8 0 0 0</pose>
+      <direction>-.5 .1 -1</direction>
+      <diffuse>.9 .9 .9 1</diffuse>
+      <cast_shadows>true</cast_shadows>
+    </light>
+    <scene>
+      <ambient>.5 .5 .5 1</ambient>
+      <background>.85 .89 .94 1</background>
+    </scene>
+    <model name="ground">
+      <static>true</static>
+      <link name="ground_link">
+        <visual name="ground_visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>12 8</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>.42 .47 .50 1</ambient>
+            <diffuse>.42 .47 .50 1</diffuse>
+          </material>
+        </visual>
+        <collision name="ground_collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>12 8</size>
+            </plane>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+    <model name="tunnel">
+      <static>true</static>
+      <link name="structure">
+        <visual name="roof_visual">
+          <pose>2 0 .31 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.8 1.3 .12</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.70 .64 .46 1</ambient>
+            <diffuse>.70 .64 .46 1</diffuse>
+          </material>
+        </visual>
+        <collision name="roof_collision">
+          <pose>2 0 .31 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.8 1.3 .12</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="left_visual">
+          <pose>2 .55 .125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.8 .2 .25</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.70 .64 .46 1</ambient>
+            <diffuse>.70 .64 .46 1</diffuse>
+          </material>
+        </visual>
+        <collision name="left_collision">
+          <pose>2 .55 .125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.8 .2 .25</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="right_visual">
+          <pose>2 -.55 .125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.8 .2 .25</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>.70 .64 .46 1</ambient>
+            <diffuse>.70 .64 .46 1</diffuse>
+          </material>
+        </visual>
+        <collision name="right_collision">
+          <pose>2 -.55 .125 0 0 0</pose>
+          <geometry>
+            <box>
+              <size>.8 .2 .25</size>
+            </box>
+          </geometry>
+        </collision>
+        <sensor name="tunnel_contacts" type="contact">
+          <always_on>true</always_on>
+          <update_rate>100</update_rate>
+          <topic>/tunnel_contacts</topic>
+          <contact>
+            <topic>/tunnel_contacts</topic>
+            <collision>roof_collision</collision>
+            <collision>left_collision</collision>
+            <collision>right_collision</collision>
+          </contact>
+        </sensor>
+      </link>
+    </model>
+  </world>
+</sdf>

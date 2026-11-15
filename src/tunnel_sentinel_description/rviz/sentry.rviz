@@ -1,0 +1,51 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+Visualization Manager:
+  Class: ""
+  Global Options:
+    Background Color: 38; 44; 52
+    Fixed Frame: odom
+    Frame Rate: 30
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Name: Grid
+      Enabled: true
+      Plane Cell Count: 30
+      Cell Size: 0.25
+    - Class: rviz_default_plugins/RobotModel
+      Name: Sentry
+      Enabled: true
+      Description Source: Topic
+      Description Topic:
+        Value: /red_standard_robot1/robot_description
+        Durability Policy: Transient Local
+        Reliability Policy: Reliable
+      Visual Enabled: true
+      Collision Enabled: false
+    - Class: rviz_default_plugins/PointCloud2
+      Name: Odin1
+      Enabled: true
+      Topic:
+        Value: /red_standard_robot1/odin1/cloud_raw
+        Reliability Policy: Best Effort
+        Durability Policy: Volatile
+        Depth: 5
+      Style: Points
+      Size (Pixels): 2
+      Color Transformer: AxisColor
+      Axis: Z
+      Decay Time: 0
+    - Class: rviz_default_plugins/TF
+      Name: TF
+      Enabled: false
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 3.0
+      Pitch: 0.45
+      Yaw: 0.8
+      Focal Point: {X: 0.0, Y: 0.0, Z: 0.25}
+Window Geometry:
+  Width: 1200
+  Height: 800
